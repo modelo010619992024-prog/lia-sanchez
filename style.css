@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+.titulo {
+  font-family: 'Pacifico', cursive;
+  color: #c084fc;
+  font-size: 60px;
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  z-index: 10;
+
+  /* BORDE NEGRO */
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0    0   8px rgba(0,0,0,0.6);
+}
+
+
+.slider {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  width: 400vw;
+  height: 100vh;
+  animation: slide 20s infinite;
+}
+
+.slider-track img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* ANIMACIÓN */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-100vw); }
+  50%  { transform: translateX(-200vw); }
+  75%  { transform: translateX(-300vw); }
+  100% { transform: translateX(0); }
+}
+
+/* BOTONES */
+.botones {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;   /* 👈 vertical */
+  align-items: center;      /* 👈 centrados */
+  gap: 15px;
+  z-index: 10;
+}
+
+
+.botones a {
+  width: 240px;
+  padding: 15px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Intro', sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  color: white;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  transition: all 0.3s ease;
+}
+/* ONLYFANS */
+.botones a:nth-child(1) {
+  background: rgba(0, 175, 240, 0.55);
+}
+
+/* INSTAGRAM */
+.botones a:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    rgba(225, 48, 108, 0.40),
+    rgba(253, 29, 29, 0.40),
+    rgba(245, 96, 64, 0.40)
+  );
+}
+
+/* TELEGRAM */
+.botones a:nth-child(3) {
+  background: rgba(0, 136, 204, 0.55);
+}
+.botones a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255,255,255,0.35);
+}
